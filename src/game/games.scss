@@ -1,0 +1,150 @@
+.games {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+
+  header {
+      user-select: none;
+  }
+
+  h1 {
+      font-family: 'Pangolin', cursive;
+      font-size:3rem;
+      color: #FF9B9B;
+      text-align: center;
+  }
+
+  .progress-bar {
+      margin-bottom: 0.4rem;
+      width: 100%;
+      background-color: #f3f3f3;
+      border-radius: 12px;
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .progress {
+      height: 20px;
+      background-color: #FF9B9B;
+      border-radius: 12px;
+      transition: width 0.4s ease-in-out;
+  }
+
+  .info {
+      display: flex;
+      gap:1rem;
+      margin-bottom: 1rem;
+  }
+}
+
+.pet {
+  img {
+    height: 30vh;
+    object-fit: contain;
+    z-index: 1;
+  }
+}
+
+.buttons_container {
+  margin-top:2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pushable {
+  margin:1rem;
+  border-radius: 12px;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline-offset: 4px;
+  user-select: none;
+}
+
+.front {
+  display: block;
+  padding: 12px 42px;
+  border-radius: 12px;
+  font-size: 1.25rem;
+  user-select: none;
+  color: white;
+  transform: translateY(-6px);
+}
+
+.pushable:active .front {
+  transform: translateY(-2px);
+}
+
+footer {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8rem;
+  color: #FF9B9B;
+  text-align: center;
+  margin-bottom: 1rem;
+  position: fixed;
+  bottom:0;
+
+  & > p {
+    margin:0;
+  }
+
+  & > a {
+    color: #FF9B9B;
+    text-decoration: none;
+    font-size: 1rem;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.endScreen {
+  display:flex;
+  color:red;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  
+   .backhome {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid #FF9B9B;
+    border-radius: 0.5rem;
+    background-color: #FF9B9B;
+    color: #FFFEC4;
+    width: 100%;
+    cursor: pointer;
+    &:focus {
+      outline: none;
+      border-color: #FF3D3D;
+    }
+  }
+
+  & > a {
+    color: #FF9B9B;
+    text-decoration: none;
+    font-size: 1rem;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.copy {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid #a2ff9b;
+  border-radius: 0.5rem;
+  background-color: #a2ff9b;
+  color: #8c8c8c;
+  width: 100%;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+    border-color: #FF3D3D;
+  }
+}
