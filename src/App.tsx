@@ -50,8 +50,9 @@ function SelectPet() {
         <Link to={selectedAnimal ? "/game" : "/"}> 
           <button className='play' disabled={!selectedAnimal || !name}>Start</button>
         </Link>
-        <Footer/>
       </div>
+      <Footer/>
+
     </div>
   );
 }
@@ -76,6 +77,7 @@ function App() {
           <Route path="/game" element={<GamePage  />} />  
         </Routes>
       </PetProvider>
+      
     </Router>
   );
 }
