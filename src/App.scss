@@ -28,7 +28,6 @@ body {
     margin: 0 auto;
     max-width: 60vw;
     padding: 0 0.5rem;
-    height: 100%;
 
     .selectAnimal {
       width: 100%;
@@ -89,9 +88,8 @@ body {
     font-size: 0.8rem;
     color: #FF9B9B;
     text-align: center;
-    margin-bottom: 1rem;
-    position: fixed;
-    bottom:0;
+    margin-bottom: 3rem;
+
 
     & > p {
       margin:0;
