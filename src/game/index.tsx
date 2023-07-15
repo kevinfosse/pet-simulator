@@ -12,7 +12,7 @@ export function GamePage() {
   const [health, setHealth] = useState(100);
   const [hunger, setHunger] = useState(0);
   const [happiness, setHappiness] = useState(100);
-  const [isDead, setIsDead] = useState(true);
+  const [isDead, setIsDead] = useState(false);
 
   const intervalId = useRef<NodeJS.Timeout | null>(null);
 
