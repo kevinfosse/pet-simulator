@@ -148,3 +148,20 @@ footer {
     border-color: #FF3D3D;
   }
 }
+
+@media only screen and (orientation: portrait) {
+  /* styles for portrait orientation */
+
+  .pet {
+    img {
+      height: 20vh;
+      object-fit: contain;
+      z-index: 1;
+    }
+  }
+
+  footer {
+    display:contents;
+    margin-top:0.5rem;
+  }
+  }

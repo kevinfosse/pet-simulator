@@ -7,7 +7,7 @@ export default function Footer() {
 
             
             <p>Made with <span style={{color: "red"}}>&hearts;</span> in France</p>
-            <a href="https://github.com/kevinfosse/threads-cardID">Virtuel Pet <img src="git" alt="" /> </a>
+            <a href="https://github.com/kevinfosse/pet-simulator">Virtuel Pet <img src="git" alt="" /> </a>
             
 
         </footer>
