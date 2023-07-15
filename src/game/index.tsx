@@ -92,7 +92,9 @@ export function GamePage() {
       - Nom de l'animal : ${name}
       - Age de l'animal : ${age} ans
       - Nombre de jours écoulés : ${day}
-      - État de l'animal : Mort ☠️`;
+      - État de l'animal : Mort ☠️
+      https://www.pets-simulator.fr/
+      `;
 
     const copyRecapitulatif = () => {
       navigator.clipboard.writeText(recapitulatifText);
