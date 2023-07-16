@@ -86,15 +86,15 @@ export function GamePage() {
   }
 
   if (isDead) {
-    const recapitulatifText = `
-      Récapitulatif de la partie :
-      - Animal sélectionné : ${selectedAnimal?.nom} ${selectedAnimal?.humeurs.IconInitial}
-      - Nom de l'animal : ${name}
-      - Age de l'animal : ${age} ans
-      - Nombre de jours écoulés : ${day}
-      - État de l'animal : Mort ☠️
-      https://www.pets-simulator.fr/
-      `;
+    const recapitulatifText = [
+       `Récapitulatif de la partie :`,
+       `- Animal sélectionné : ${selectedAnimal?.nom} ${selectedAnimal?.humeurs.IconInitial}`,
+       `- Nom de l'animal : ${name}`,
+       `- Age de l'animal : ${age} ans`,
+       `- Nombre de jours écoulés : ${day}`,
+       `- État de l'animal : Mort ☠️`,
+       location.origin,
+    ].join("\n");
 
     const copyRecapitulatif = () => {
       navigator.clipboard.writeText(recapitulatifText);
