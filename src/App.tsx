@@ -6,6 +6,8 @@ import Footer from './components/Footer';
 import { listeAnimaux } from './animals';
 import { GamePage } from './game'; 
 import { Header } from './components/Header';
+import { Analytics } from '@vercel/analytics/react';
+
 
 // Création du contexte
 export interface PetContextProps {
@@ -22,6 +24,7 @@ function SelectPet() {
 
   return (
     <div className="App">
+      
       <Header/>
       <div className="interface">
         <p>Select a name for your pet</p>

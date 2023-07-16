@@ -3,6 +3,7 @@ import { PetContext, PetContextProps } from '../App';
 import { Link } from 'react-router-dom';
 import './games.scss';
 import { Header } from '../components/Header';
+import { useLocation } from 'react-router-dom';
 import Footer from '../components/Footer';
 
 export function GamePage() {
