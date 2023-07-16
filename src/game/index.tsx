@@ -93,7 +93,7 @@ export function GamePage() {
        `- Age de l'animal : ${age} ans`,
        `- Nombre de jours écoulés : ${day}`,
        `- État de l'animal : Mort ☠️`,
-       location.origin,
+       window.location.origin,
     ].join("\n");
 
     const copyRecapitulatif = () => {
