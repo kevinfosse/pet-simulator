@@ -81,9 +81,9 @@ export function GamePage() {
   
         const brightness : [number, number, number] = [
           // Add properties to the brightness object based on the retrieved color if needed
-          Math.min(primaryColor[0] + 32, 255),
-          Math.min(primaryColor[1] + 32, 255),
-          Math.min(primaryColor[2] + 32, 255),
+          Math.min(primaryColor[0] + 62, 255),
+          Math.min(primaryColor[1] + 62, 255),
+          Math.min(primaryColor[2] + 62, 255),
 
         ];
         
