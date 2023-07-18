@@ -12,7 +12,6 @@
   h1 {
       font-family: 'Pangolin', cursive;
       font-size:3rem;
-      color: #FF9B9B;
       text-align: center;
   }
 
@@ -26,9 +25,8 @@
 
   .progress {
       height: 20px;
-      background-color: #FF9B9B;
       border-radius: 12px;
-      transition: width 0.4s ease-in-out;
+      
   }
 
   .info {
@@ -80,7 +78,6 @@
 footer {
   font-family: 'DM Sans', sans-serif;
   font-size: 0.8rem;
-  color: #FF9B9B;
   text-align: center;
   margin-top: 1rem;
   
@@ -90,7 +87,6 @@ footer {
   }
 
   & > a {
-    color: #FF9B9B;
     text-decoration: none;
     font-size: 1rem;
     &:hover {

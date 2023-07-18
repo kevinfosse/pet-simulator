@@ -7,6 +7,7 @@ import { listeAnimaux } from './animals';
 import { GamePage } from './game'; 
 import { Header } from './components/Header';
 import { Analytics } from '@vercel/analytics/react';
+import { prominent } from 'color.js';
 
 
 // Création du contexte
@@ -19,7 +20,11 @@ export interface PetContextProps {
 
 export const PetContext = createContext<PetContextProps | null>(null);
 
+
 function SelectPet() {
+
+ 
+
   const { name, setName, selectedAnimal, setSelectedAnimal } = useContext(PetContext) as PetContextProps;
 
   return (

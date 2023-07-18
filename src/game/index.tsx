@@ -5,6 +5,7 @@ import './games.scss';
 import { Header } from '../components/Header';
 import { useLocation } from 'react-router-dom';
 import Footer from '../components/Footer';
+import {prominent} from 'color.js';
 
 export function GamePage() {
   const { selectedAnimal, name } = useContext(PetContext) as PetContextProps;
@@ -14,6 +15,9 @@ export function GamePage() {
   const [hunger, setHunger] = useState(0);
   const [happiness, setHappiness] = useState(100);
   const [isDead, setIsDead] = useState(false);
+
+  const [background, setBackground] = useState('#ffffff')
+  const [textColor, setTextColor] = useState('#000000')
 
   const intervalId = useRef<NodeJS.Timeout | null>(null);
 
@@ -37,7 +41,70 @@ export function GamePage() {
     setHealth((prev) => Math.min(100, prev + addedHealth));
   };
 
+  async function getColor(name: string) {
+    const color = await prominent(`/assets/pets/${name}/${name}_happy.png`, { amount: 2 });
+    return color;
+  }
+
+  function getContrastColor(hexColor:string) {
+    // Convertir la couleur hexadécimale en valeurs RVB
+    const r = parseInt(hexColor.substr(1, 2), 16);
+    const g = parseInt(hexColor.substr(3, 2), 16);
+    const b = parseInt(hexColor.substr(5, 2), 16);
+  
+    // Calculer le contraste selon la formule WCAG 2.0
+    const contrast = (r * 299 + g * 587 + b * 114) / 1000;
+  
+    // Retourner une couleur de texte foncée pour les fonds clairs,
+    // ou une couleur de texte claire pour les fonds foncés
+    return contrast >= 128 ? '#000000' : '#ffffff';
+  }
+
+  // get color
+
+  function rgbToHex(r: number, g: number, b: number): string {
+    const componentToHex = (c: number) => {
+      const hex = c.toString(16);
+      return hex.length === 1 ? '0' + hex : hex;
+    };
+  
+    return `#${componentToHex(r)}${componentToHex(g)}${componentToHex(b)}`;
+  }
+
   useEffect(() => {
+    const nameLower = selectedAnimal?.nom.toLowerCase();
+    if (nameLower) {
+      getColor(nameLower).then((color) => {
+        const primaryColor = color[1] as number[];
+        console.log(primaryColor)
+       // console.log(primaryColor[1]);
+  
+        const brightness : [number, number, number] = [
+          // Add properties to the brightness object based on the retrieved color if needed
+          Math.min(primaryColor[0] + 32, 255),
+          Math.min(primaryColor[1] + 32, 255),
+          Math.min(primaryColor[2] + 32, 255),
+
+        ];
+        
+        const hexColor = rgbToHex(brightness[0], brightness[1], brightness[2]);
+        setBackground(hexColor);
+
+        const contrastColor = getContrastColor(hexColor);
+        setTextColor(contrastColor);
+        
+      }).catch((error) => {
+        console.error(error);
+      });
+    }
+  }, []);
+  
+  // game logic
+  useEffect(() => {
+
+  
+   
+
     if (intervalId.current) {
       clearInterval(intervalId.current);
     }
@@ -89,7 +156,7 @@ export function GamePage() {
   if (isDead) {
     const recapitulatifText = [
        `Récapitulatif de la partie :`,
-       `- Animal sélectionné : ${selectedAnimal?.nom} ${selectedAnimal?.humeurs.IconInitial}`,
+       `- Anima sélectionné : ${selectedAnimal?.nom} ${selectedAnimal?.humeurs.IconInitial}`,
        `- Nom de l'animal : ${name}`,
        `- Age de l'animal : ${age} ans`,
        `- Nombre de jours écoulés : ${day}`,
@@ -135,7 +202,7 @@ export function GamePage() {
   }
 
   return (
-    <div className='games'>
+    <div className='games' style={{backgroundColor: background, color: textColor}}>
       <Header />
       <div className="pet-box">
         <div className='pet'><img src={petMood} alt="Pet Mood" /></div>
@@ -149,19 +216,19 @@ export function GamePage() {
         <div>
           Health: {health.toFixed(2)}
           <div className="progress-bar">
-            <div className="progress" style={{ width: `${health}%` }}></div>
+            <div className="progress" style={{ width: `${health}%`, backgroundColor: background, mixBlendMode: 'difference'  }}></div>
           </div>
         </div>
         <div>
           Hunger: {hunger.toFixed(2)}
           <div className="progress-bar">
-            <div className="progress" style={{ width: `${hunger}%` }}></div>
+            <div className="progress" style={{ width: `${hunger}%`, backgroundColor: background, mixBlendMode: 'difference' }}></div>
           </div>
         </div>
         <div>
           Happiness: {happiness.toFixed(2)}
           <div className="progress-bar">
-            <div className="progress" style={{ width: `${happiness}%` }}></div>
+            <div className="progress" style={{ width: `${happiness}%`, backgroundColor: background, mixBlendMode: 'difference'  }}></div>
           </div>
         </div>
       </div>
@@ -190,7 +257,7 @@ export function GamePage() {
 
       </div>
 
-      <Footer />
+      <Footer color={textColor}/>
     </div>
   );
 }

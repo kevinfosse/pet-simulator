@@ -1,6 +1,6 @@
 export const listeAnimaux: Animal[] = [
     {
-      nom: 'Chat',
+      nom: 'Cat',
       humeurs: {
         IconInitial: '😺',
         Triste: '/assets/pets/cat/cat_sad.png',
@@ -20,7 +20,7 @@ export const listeAnimaux: Animal[] = [
       }
     },
     {
-      nom: 'Ours',
+      nom: 'Bear',
       humeurs: {
         IconInitial: '🐻',
         Triste: '/assets/pets/bear/bear_sad.png',
@@ -30,7 +30,7 @@ export const listeAnimaux: Animal[] = [
     }
   },
   {
-    nom: 'Caca', 
+    nom: 'Poop', 
     humeurs: {
       IconInitial: '💩',
       Triste: '/assets/pets/poop/poop_sad.png',
