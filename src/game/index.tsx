@@ -155,7 +155,7 @@ export function GamePage() {
         <div>
           Hunger: {hunger.toFixed(2)}
           <div className="progress-bar">
-            <div className="progress" style={{ width: `${100 - hunger}%` }}></div>
+            <div className="progress" style={{ width: `${hunger}%` }}></div>
           </div>
         </div>
         <div>
