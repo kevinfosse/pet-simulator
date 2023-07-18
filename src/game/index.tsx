@@ -166,12 +166,14 @@ export function GamePage() {
         </div>
       </div>
 
+
       <div className="buttons_container">
-        <button onClick={playWithPet} className="pushable" style={{ backgroundColor: "rgb(231 231 231)" }}>
-          <span className="front" style={{ backgroundColor: "rgb(245 245 245)" }}>
-            ⚽
+      <button onClick={washPet} className="pushable" style={{ backgroundColor: "rgb(129 227 237)" }}>
+          <span className="front" style={{ backgroundColor: "rgb(162 245 253)" }}>
+            🛁
           </span>
         </button>
+    
 
         <button onClick={feedPet} className="pushable" style={{ backgroundColor: "rgb(241 218 128)" }}>
           <span className="front" style={{ backgroundColor: "rgb(255 230 132)" }}>
@@ -179,11 +181,13 @@ export function GamePage() {
           </span>
         </button>
 
-        <button onClick={washPet} className="pushable" style={{ backgroundColor: "rgb(129 227 237)" }}>
-          <span className="front" style={{ backgroundColor: "rgb(162 245 253)" }}>
-            🛁
+
+        <button onClick={playWithPet} className="pushable" style={{ backgroundColor: "rgb(231 231 231)" }}>
+          <span className="front" style={{ backgroundColor: "rgb(245 245 245)" }}>
+            ⚽
           </span>
         </button>
+
       </div>
 
       <Footer />
