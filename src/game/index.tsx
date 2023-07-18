@@ -81,9 +81,9 @@ export function GamePage() {
   
         const brightness : [number, number, number] = [
           // Add properties to the brightness object based on the retrieved color if needed
-          Math.min(primaryColor[0] + 62, 255),
-          Math.min(primaryColor[1] + 62, 255),
-          Math.min(primaryColor[2] + 62, 255),
+          Math.min(primaryColor[0] + 100, 255),
+          Math.min(primaryColor[1] + 100, 255),
+          Math.min(primaryColor[2] + 100, 255),
 
         ];
         
@@ -220,9 +220,9 @@ export function GamePage() {
           </div>
         </div>
         <div>
-          Hunger: {hunger.toFixed(2)}
+          Hunger: {(100 - hunger).toFixed(2)}
           <div className="progress-bar">
-            <div className="progress" style={{ width: `${hunger}%`, backgroundColor: background, mixBlendMode: 'difference' }}></div>
+            <div className="progress" style={{ width: `${100 - hunger}%`, backgroundColor: background, mixBlendMode: 'difference' }}></div>
           </div>
         </div>
         <div>
