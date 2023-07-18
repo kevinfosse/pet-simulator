@@ -10,7 +10,7 @@ app.get('/api/', (req, res) => {
   });
 
   app.get('/api/hello', (req, res) => {
-    res.json('Hello, World!');
+    res.json('Hello');
   });
 
 

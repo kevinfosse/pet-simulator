@@ -21,25 +21,10 @@ export const PetContext = createContext<PetContextProps | null>(null);
 
 function SelectPet() {
   const { name, setName, selectedAnimal, setSelectedAnimal } = useContext(PetContext) as PetContextProps;
-  const [result, setResult] = useState("")
-  async function fetchInfo() {
-    const url = process.env.REACT_APP_API_URL + "/hello";
-    const response = await fetch(url);
-    console.log(response)
-    const data = await response.json();
-    setResult(data)
-    console.log(data)
-  }
-
-  useEffect(() => {
-    fetchInfo()
-  }, [])
 
   return (
     <div className="App">
-      
       <Header/>
-      <p>{result}</p>
       <div className="interface">
         <p>Select a name for your pet</p>
         <input type="text" placeholder="Name" value={name} onChange={e => setName(e.target.value)} />

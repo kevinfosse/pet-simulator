@@ -49,4 +49,14 @@ export const listeAnimaux: Animal[] = [
     Malade: '/assets/pets/pepo/pepo_sick.gif'
 }
 },
+{
+  nom: "Bird", 
+  humeurs: {
+    IconInitial : '🐦',
+    Triste: '/assets/pets/bird/bird_sad.png',
+    Faim: '/assets/pets/bird/bird_feed.png',
+    Heureux: '/assets/pets/bird/bird_happy.png',
+    Malade: '/assets/pets/bird/bird_sick.png',
+  }
+}
 ];
